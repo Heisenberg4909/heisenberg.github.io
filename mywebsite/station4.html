@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станция 1: Информатика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="phys-bg">
+    <div class="container">
+        <h1>Станция 4: Физика и химия</h1>
+        <p>Как называется таблица химических элементов, созданная Менделеевым?</p>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">Проверить</button>
+        <p id="hint"></p>
+
+        <script>
+            function checkAnswer() {
+                let answer = document.getElementById("answer").value.toLowerCase().trim();
+                if (answer === "периодическая") {
+                    hint.innerHTML = "✅ Верно! Подсказка: Здесь можно путешествовать во времени, не покидая комнату. Прошлое оживает на страницах, а великие умы ведут за собой.";
+                    hint.style.color = "green";
+                } else {
+                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
+                    hint.style.color = "red";
+                }
+            }
+        </script>
+    </div>
+</body>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станция 2: </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="eng-bg">
+    <div class="container">
+        <h1>Станция 2: «Забытый язык»</h1>
+        <p>Ты входишь в кабинет, но все тексты на экране выглядят странно. Буквы перепутаны, и смысл полностью потерян! Оказывается, система зашифровала все данные шифром Цезаря.</p>
+        <p class="task">Введите ответ</p>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">Проверить</button>
+        <p id="hint"></p>
+
+        <script>
+            function checkAnswer() {
+                let answer = document.getElementById("answer").value.toLowerCase().trim();
+                if (answer === "mouse") {
+                    hint.innerHTML = "✅ Верно! Следующая подсказка: В этом месте запятые решают судьбу, а ошибки могут изменить смысл. Здесь правят буквы, а правила – их стражи.";
+                    hint.style.color = "green";
+                } else {
+                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
+                    hint.style.color = "red";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

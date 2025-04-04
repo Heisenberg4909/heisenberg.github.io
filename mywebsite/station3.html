@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станция 1: Информатика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="rus-bg">
+    <div class="container">
+        <h1>Станция 3: «Исчезнувшие буквы»</h1>
+        <p>Как называется раздел науки, изучающий правила написания слов?</p>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">Проверить</button>
+        <p id="hint"></p>
+
+        <script>
+            function checkAnswer() {
+                let answer = document.getElementById("answer").value.toLowerCase().trim();
+                if (answer === "орфография") {
+                    hint.innerHTML = "✅ Верно! Следующая станция: Здесь управляют невидимыми силами, заставляют искры загораться, жидкости менять цвет, а металлы растворяться.";
+                    hint.style.color = "green";
+                } else {
+                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
+                    hint.style.color = "red";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

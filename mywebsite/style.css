@@ -1,0 +1,102 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Фон главной страницы (цифровой мир) */
+.main-bg {
+    background: url('images/digital-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Фон для кабинета информатики */
+.info-bg {
+    background: url('images/code-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Фон для кабинета английского */
+.eng-bg {
+    background: url('images/english-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Фон для кабинета русского */
+.rus-bg {
+    background: url('images/books-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Фон для кабинета физики и химии */
+.phys-bg {
+    background: url('images/physics-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Фон для кабинета истории */
+.hist-bg {
+    background: url('images/history-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Основной контейнер */
+.container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Кнопка */
+.button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #45a049;
+}
+
+/* Поля ввода */
+input {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #007bb5;
+}
+
+/* Подсказки */
+.hint {
+    font-style: italic;
+    font-size: 18px;
+    color: green;
+}
+.error{
+    color: red;
+}
