@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    color: white;
+    color: white; /* Оставлено для текста вне контейнера и описаний */
     margin: 0;
     padding: 0;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 /* Фон для кабинета физики и химии */
-.phys-bg {
+.phys-chem-bg {
     background: url('images/physics-bg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
@@ -51,10 +51,21 @@ body {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     margin-top: 50px;
+    color: white; /* Текст внутри контейнера белый по умолчанию */
 }
 
-/* Кнопка */
-.button {
+/* Заголовки */
+h1 {
+    color: #4B0082; /* Оставлено для задач, будет переопределено для описаний */
+    text-align: center;
+}
+
+h2 {
+    color: #34495e; /* Оставлено для задач, будет переопределено для описаний */
+}
+
+/* Кнопка и ссылки */
+.button, a.button {
     display: inline-block;
     background: #4CAF50;
     color: white;
@@ -64,19 +75,11 @@ body {
     border-radius: 5px;
 }
 
-.button:hover {
+.button:hover, a.button:hover {
     background: #45a049;
 }
 
-/* Поля ввода */
-input {
-    padding: 10px;
-    margin-top: 10px;
-    width: 80%;
-    border: none;
-    border-radius: 5px;
-}
-
+/* Обычные кнопки */
 button {
     padding: 10px 20px;
     margin-top: 10px;
@@ -91,12 +94,54 @@ button:hover {
     background: #007bb5;
 }
 
+/* Поля ввода */
+input, input[type="text"], select {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Стили для задач */
+.task {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-left: 6px solid #4B0082;
+    border-radius: 8px;
+    color: #333; /* Темный текст для задач */
+}
+
+/* Стили для pre (код) */
+pre {
+    background-color: #e6e6fa;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    color: #333; /* Темный текст для кода */
+}
+
+/* Стили для таблиц */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    color: #333; /* Темный текст для таблиц */
+}
+
 /* Подсказки */
 .hint {
     font-style: italic;
     font-size: 18px;
     color: green;
 }
-.error{
-    color: red;
-}
+
+/* Ошибки и

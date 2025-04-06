@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Станция 2: </title>
+    <title>Станция 2: Забытый язык</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="eng-bg">
     <div class="container">
         <h1>Станция 2: «Забытый язык»</h1>
         <p>Ты входишь в кабинет, но все тексты на экране выглядят странно. Буквы перепутаны, и смысл полностью потерян! Оказывается, система зашифровала все данные шифром Цезаря.</p>
-        <p class="task">Введите ответ</p>
+        <p><strong>Шифр Цезаря</strong> — это способ замены каждой буквы другой, сдвинутой на несколько позиций в алфавите. Например, если сдвиг +3, то A → D, B → E и т.д.</p>
+
+        <h2>🔐 Этап 1 — Найди сдвиг</h2>
+        <p><strong>Сообщение:</strong> <code>Wklv lv d whvw phvvdjh.</code></p>
+        <p><em>Подсказка: Это простое предложение. Сдвиг — не больше 5.</em></p>
+
+        <h2>🔐 Этап 2 — Расшифруй ключевую фразу</h2>
+        <p><strong>Сообщение:</strong> <code>Zkdw brx qhhg lv d frgh.</code></p>
+        <p><em>Подсказка: Ответ здесь. Используй тот же сдвиг.</em></p>
+
+        <h2>🔐 Этап 3 — Найди код-подсказку</h2>
+        <p><strong>Сообщение:</strong> <code>Fdehqw iru qhaw urrp: vsbwd[</code></p>
+        <p><em>Подсказка: Это название кабинета, в который тебе нужно попасть. Используй сдвиг -3.</em></p>
+
+        <hr>
+
+        <p class="task">Введите ответ:</p>
         <input type="text" id="answer">
         <button onclick="checkAnswer()">Проверить</button>
         <p id="hint"></p>
@@ -18,7 +34,8 @@
         <script>
             function checkAnswer() {
                 let answer = document.getElementById("answer").value.toLowerCase().trim();
-                if (answer === "mouse") {
+                let hint = document.getElementById("hint");
+                if (answer === "syntax") {
                     hint.innerHTML = "✅ Верно! Следующая подсказка: В этом месте запятые решают судьбу, а ошибки могут изменить смысл. Здесь правят буквы, а правила – их стражи.";
                     hint.style.color = "green";
                 } else {

@@ -3,30 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Станция 1: Информатика</title>
+    <title>Станция 4: Лаборатория формул</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="phys-bg">
+<body class="phys-chem-bg">
     <div class="container">
-        <h1>Станция 4: Физика и химия</h1>
-        <p>Как называется таблица химических элементов, созданная Менделеевым?</p>
-        <input type="text" id="answer">
-        <button onclick="checkAnswer()">Проверить</button>
-        <p id="hint"></p>
+        <h1>Станция 4: «Лаборатория формул»</h1>
+        <p>ИИ повредил данные о законах физики и химии. Восстанови их, решив задачи ниже, чтобы вернуть знания в систему!</p>
+
+        <div class="task">
+            <h3>Задание 1: Скорость падения</h3>
+            <p>Объект падает в вакууме. Ускорение свободного падения — 9.8 м/с². Чему равна скорость через 6 секунд? Введи ответ в м/с (округли до целого числа).</p>
+            <p class="hint">💡 Подсказка: Формула: v = g * t.</p>
+            <input type="text" id="q1" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 2: Реакция горения</h3>
+            <p>Реакция: 2H₂ + O₂ → 2H₂O. У тебя есть 12 молекул H₂ и 5 молекул O₂. Сколько молекул H₂O получится? Введи число.</p>
+            <p class="hint">💡 Подсказка: Учитывай соотношение 2:1 для H₂ и O₂.</p>
+            <input type="text" id="q2" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 3: Закон Ома</h3>
+            <p>Напряжение (U) = 15 В, сопротивление (R) = 3 Ом. Чему равна сила тока (I)? Введи ответ в амперах (с точностью до целого числа).</p>
+            <p class="hint">💡 Подсказка: Формула: I = U / R.</p>
+            <input type="text" id="q3" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 4: Балансировка уравнения</h3>
+            <p>Дано уравнение: C₂H₅OH + O₂ → CO₂ + H₂O. Какой коэффициент должен стоять перед O₂, чтобы уравнение было сбалансировано? Введи число.</p>
+            <p class="hint">💡 Подсказка: Сбалансируй атомы углерода, водорода и кислорода.</p>
+            <input type="text" id="q4" placeholder="Ответ">
+        </div>
+
+        <button onclick="checkAnswers()">Проверить</button>
+        <p id="result"></p>
+        <p id="nextHint"></p>
 
         <script>
-            function checkAnswer() {
-                let answer = document.getElementById("answer").value.toLowerCase().trim();
-                if (answer === "периодическая") {
-                    hint.innerHTML = "✅ Верно! Подсказка: Здесь можно путешествовать во времени, не покидая комнату. Прошлое оживает на страницах, а великие умы ведут за собой.";
-                    hint.style.color = "green";
+            function checkAnswers() {
+                const q1 = document.getElementById("q1").value.trim();
+                const q2 = document.getElementById("q2").value.trim();
+                const q3 = document.getElementById("q3").value.trim();
+                const q4 = document.getElementById("q4").value.trim();
+
+                if (q1 === "59" && q2 === "10" && q3 === "5" && q4 === "3") {
+                    document.getElementById("result").innerText = "✅ Все верно!";
+                    document.getElementById("result").style.color = "green";
+                    document.getElementById("nextHint").innerText = "Следующая подсказка: Следующая остановка: место, где числа обозначают годы, а события складываются в хронику.";
                 } else {
-                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
-                    hint.style.color = "red";
+                    document.getElementById("result").innerText = "❌ Проверь свои ответы ещё раз.";
+                    document.getElementById("result").style.color = "red";
+                    document.getElementById("nextHint").innerText = "";
                 }
             }
         </script>
     </div>
-</body>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финал квеста</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-bg">
+    <div class="container">
+        <h1>Финальный этап</h1>
+        <p>Ты прошёл все станции и собрал знания, чтобы остановить ИИ. Теперь введи финальный код, чтобы перезапустить систему и спасти школу!</p>
+
+        <input type="text" id="finalCode" placeholder="Введи код">
+        <button onclick="checkCode()">Ввести</button>
+        <p id="result"></p>
+        <p id="congratulations" style="display: none;">🎉 Поздравляем! Ты успешно прошёл квест! Система перезапущена, школа спасена! Ты настоящий герой! 🚀</p>
+
+        <script>
+            function checkCode() {
+                const code = document.getElementById("finalCode").value.trim().toUpperCase();
+                const result = document.getElementById("result");
+                const congratulations = document.getElementById("congratulations");
+
+                if (code === "RESTART") {
+                    result.innerText = "✅ Код верный!";
+                    result.style.color = "green";
+                    congratulations.style.display = "block";
+                } else {
+                    result.innerText = "❌ Код неверный. Попробуй ещё раз!";
+                    result.style.color = "red";
+                    congratulations.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -3,26 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Станция 1: Информатика</title>
+    <title>Станция 3: Сила слова</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="rus-bg">
     <div class="container">
-        <h1>Станция 3: «Исчезнувшие буквы»</h1>
-        <p>Как называется раздел науки, изучающий правила написания слов?</p>
-        <input type="text" id="answer">
-        <button onclick="checkAnswer()">Проверить</button>
-        <p id="hint"></p>
+        <h1>Станция 3: «Сила слова»</h1>
+        <p>Ты оказался в кабинете, где язык программирования сплетается с родным словом. Здесь каждый символ — не случайность. Проверь свою внимательность и языковое чутьё!</p>
+
+        <div class="task">
+            <h3>Задание 1: «Лингвистический баг»</h3>
+            <p>В языке программирования слова должны быть на месте, иначе — ошибка! Исправь "программистский" код, переставив слова в правильном порядке:</p>
+            <blockquote>
+                порядке – только – работает – синтаксис – правильном – в
+            </blockquote>
+            <p><strong>Вопрос:</strong> Составь из этих слов правильную фразу. Какое слово в ней будет <strong>третьим</strong>?</p>
+            <p class="hint">💡 Подсказка: Вспомни, что "синтаксис" — это порядок слов в языке программирования и русском тоже. Ошибка в синтаксисе — это когда слова стоят не там, где надо.</p>
+            <input type="text" id="q1">
+        </div>
+
+
+        <div class="task">
+            <h3>Задание 2: «Расшифруй программистский стих»</h3>
+            <p><em>
+                Я в строку помещаюсь,<br>
+                Но совсем я не текст.<br>
+                Я — указатель, но без стрелы.<br>
+                Кто я такой в контексте?
+            </em></p>
+            <select id="q3">
+                <option value="">--Выбери вариант--</option>
+                <option value="A">Символ</option>
+                <option value="B">Переменная</option>
+                <option value="C">Курсор</option>
+                <option value="D">Цикл</option>
+            </select>
+        </div>
+
+        <div class="task">
+            <h3>Задание 3: «Синонимы в коде»</h3>
+            <p>Какое из этих слов может быть синонимом слова <strong>"ошибка"</strong> и в языке, и в коде?</p>
+            <select id="q4">
+                <option value="">--Выбери вариант--</option>
+                <option value="A">Синтаксис</option>
+                <option value="B">Баг</option>
+                <option value="C">Условие</option>
+                <option value="D">Аргумент</option>
+            </select>
+        </div>
+
+        <button onclick="checkAnswers()">Проверить</button>
+        <p id="result"></p>
+        <p id="nextHint"></p>
 
         <script>
-            function checkAnswer() {
-                let answer = document.getElementById("answer").value.toLowerCase().trim();
-                if (answer === "орфография") {
-                    hint.innerHTML = "✅ Верно! Следующая станция: Здесь управляют невидимыми силами, заставляют искры загораться, жидкости менять цвет, а металлы растворяться.";
-                    hint.style.color = "green";
+            function checkAnswers() {
+                const q1 = document.getElementById("q1").value.trim().toLowerCase();
+                const q2 = document.getElementById("q2").value.trim().toLowerCase();
+                const q3 = document.getElementById("q3").value;
+                const q4 = document.getElementById("q4").value;
+
+                if (q1 === "только" && q3 === "C" && q4 === "B") {
+                    document.getElementById("result").innerText = "✅ Все верно!";
+                    document.getElementById("result").style.color = "green";
+                    document.getElementById("nextHint").innerText = "Следующая подсказка: Химия и физика слились воедино. Там числа, формулы и явления — и информатика снова рядом.";
                 } else {
-                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
-                    hint.style.color = "red";
+                    document.getElementById("result").innerText = "❌ Проверь свои ответы ещё раз.";
+                    document.getElementById("result").style.color = "red";
+                    document.getElementById("nextHint").innerText = "";
                 }
             }
         </script>

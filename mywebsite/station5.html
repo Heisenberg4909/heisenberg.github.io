@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Станция 1: Информатика</title>
+    <title>Станция 5: Хроники времени</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="hist-bg">
     <div class="container">
-        <h1>Станция 5: История</h1>
-        <p>Назовите год начала Великой Отечественной войны.</p>
-        <input type="text" id="answer">
-        <button onclick="checkAnswer()">Проверить</button>
-        <p id="hint"></p>
+        <h1>Станция 5: «Хроники времени»</h1>
+        <p>ИИ повредил исторические данные в системе. Ответь на вопросы ниже, чтобы восстановить их и получить финальный код для перезапуска системы!</p>
+
+        <div class="task">
+            <h3>Задание 1: Начало войны</h3>
+            <p>Назови год начала Великой Отечественной войны. Введи число.</p>
+            <p class="hint">💡 Подсказка: Это произошло в XX веке во время Второй мировой войны.</p>
+            <input type="text" id="q1" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 2: Падение крепости</h3>
+            <p>В каком году была основана крепость Петропавловская в Санкт-Петербурге? Введи число.</p>
+            <p class="hint">💡 Подсказка: Это связано с началом строительства города.</p>
+            <input type="text" id="q2" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 3: Великая реформа</h3>
+            <p>В каком году была отменена крепостное право в России? Введи число.</p>
+            <p class="hint">💡 Подсказка: Это произошло при Александре II.</p>
+            <input type="text" id="q3" placeholder="Ответ">
+        </div>
+
+        <div class="task">
+            <h3>Задание 4: Рождение государства</h3>
+            <p>В каком году произошло крещение Руси при князе Владимире? Введи число.</p>
+            <p class="hint">💡 Подсказка: Это событие положило начало христианизации.</p>
+            <input type="text" id="q4" placeholder="Ответ">
+        </div>
+
+        <button onclick="checkAnswers()">Проверить</button>
+        <p id="result"></p>
+        <p id="nextHint"></p>
 
         <script>
-            function checkAnswer() {
-                let answer = document.getElementById("answer").value.trim();
-                if (answer === "1941") {
-                    hint.innerHTML = "🎉 Поздравляем! Вы успешно прошли квест!";
-                    hint.style.color = "green";
+            function checkAnswers() {
+                const q1 = document.getElementById("q1").value.trim();
+                const q2 = document.getElementById("q2").value.trim();
+                const q3 = document.getElementById("q3").value.trim();
+                const q4 = document.getElementById("q4").value.trim();
+        
+                if (q1 === "1941" && q2 === "1703" && q3 === "1861" && q4 === "988") {
+                    document.getElementById("result").innerText = "✅ Все верно!";
+                    document.getElementById("result").style.color = "green";
+                    document.getElementById("nextHint").innerHTML = "Финальный код: RESTART. <a href='final.html' class='button'>Введи его в систему</a>, чтобы остановить ИИ и спасти школу!";
                 } else {
-                    hint.innerHTML = "❌ Неправильно! Попробуйте ещё раз.";
-                    hint.style.color = "red";
+                    document.getElementById("result").innerText = "❌ Проверь свои ответы ещё раз.";
+                    document.getElementById("result").style.color = "red";
+                    document.getElementById("nextHint").innerText = "";
                 }
             }
         </script>
     </div>
 </body>
 </html>
+
