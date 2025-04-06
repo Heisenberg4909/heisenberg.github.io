@@ -45,13 +45,14 @@ body {
 
 /* Основной контейнер */
 .container {
-    width: 50%;
+    width: 90%;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     margin-top: 50px;
-    color: white; /* Текст внутри контейнера белый по умолчанию */
+    color: white;
 }
 
 /* Заголовки */
@@ -144,4 +145,31 @@ table, th, td {
     color: green;
 }
 
-/* Ошибки и
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1, h2 {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    input, select, button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .task {
+        padding: 10px;
+    }
+
+    .button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
