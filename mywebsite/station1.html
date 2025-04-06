@@ -64,6 +64,12 @@
             <input type="text" id="q4">
         </div>
 
+        <div class="task">
+            <h3>Задание 5:</h3>
+            <p>На столе лежит лист с числами и примерами, реши их и закpась нужные клетки. Получившийся рисунок введи ниже.</p>
+            <input type="text" id="q5">
+        </div>
+
         <button onclick="checkAnswers()">Проверить</button>
         <p id="result"></p>
         <p id="nextHint"></p>
@@ -74,8 +80,9 @@
                 const q2 = document.getElementById("q2").value;
                 const q3 = document.getElementById("q3").value.trim();
                 const q4 = document.getElementById("q4").value.trim();
+                const q5 = document.getElementById("q5").value.trim();
 
-                if (q1 === "2" && q2 === "B" && q3 === "16" && q4 === "22") {
+                if (q1 === "2" && q2 === "B" && q3 === "16" && q4 === "22" && q5 === "панда") {
                     document.getElementById("result").innerText = "✅ Все верно!";
                     document.getElementById("result").style.color = "green";
                     document.getElementById("nextHint").innerText = "Следующая подсказка: Здесь буквы говорят по-другому, а сдвиг — ключ к пониманию. Отправляйся туда, где английский стал зашифрованным.";
